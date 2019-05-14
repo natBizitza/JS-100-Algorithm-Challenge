@@ -2,12 +2,9 @@ function adjacentElementsProduct(inputArray: number[]): number {
 
     let product: number [] = new Array();
 
-    for( let i=0; i < inputArray.length; i ++)
+    for( let i=0; i < inputArray.length - 1; i ++)
     {     
-        if(i+1 < inputArray.length)
-        {
-            product.push(inputArray[i]*inputArray[i+1]);  
-        }                  
+            product.push(inputArray[i]*inputArray[i+1]);                  
     }
     return Math.max(...product);
 }
