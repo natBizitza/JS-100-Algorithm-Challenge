@@ -1,37 +1,36 @@
 function alphabeticShift(inputString: string): string {
 
 
-    let alphabetString = 'abcdefghijklmnopqrstuvwxyz';
+    let alphabet = 'abcdefghijklmnopqrstuvwxyz';
 
-    let alphabet: string [] = alphabetString.split("");
+    let alphabetArray: string [] = alphabet.split("");
 
-    let letters: string [] = inputString.split("");
+    let separateLettersArray: string [] = inputString.split("");
 
     let resultarray: string [] = new Array();
 
-    let b;
+    let letter;
 
-    for(let i = 0; i <= letters.length -1; i ++)
+    for(let i = 0; i <= separateLettersArray.length -1; i ++)
     {
 
-        let a = alphabet.indexOf(letters[i])+1;
-        console.log(a)
+        let a = alphabetArray.indexOf(separateLettersArray[i])+1;
 
         if(a == 26)
         {
             a = 0
         }
-         b = alphabet[a]
-        console.log(b)
+        letter = alphabetArray[a]
+        console.log(letter)
 
-        resultarray.push(b);
+        resultarray.push(letter);
 
        
     
     }
 
-    let g = resultarray.join("");
-    return g;
+    let finalWord = resultarray.join("");
+    return finalWord;
 
 }
 
