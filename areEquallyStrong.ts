@@ -1,42 +1,13 @@
 function areEquallyStrong(yourLeft: number, yourRight: number, friendsLeft: number, friendsRight: number): boolean {
 
-   let  yourStrongestArm: number = 0;
-   let  yourWeakestsArm: number = 0;
-   let  friendsStrongestArm: number = 0;
-   let  freindsWeakestArm: number = 0;
+   let  yourStrongestArm = yourLeft >= yourRight ? yourLeft : yourRight;
+   let  yourWeakestsArm = yourRight >= yourLeft ? yourLeft : yourRight;
+   let  friendsStrongestArm = friendsLeft >= friendsRight ? friendsLeft : friendsRight;
+   let  freindsWeakestArm = friendsRight >= friendsLeft ? friendsLeft : friendsRight;
 
-   if(yourLeft >= yourRight)
-   {
-        yourStrongestArm = yourLeft;
-        yourWeakestsArm = yourRight;
-   }
-   else 
-   {
-        yourStrongestArm = yourRight;
-        yourWeakestsArm = yourLeft;
-   }
+   return friendsStrongestArm === yourStrongestArm && freindsWeakestArm === yourWeakestsArm;
 
-   if(friendsLeft >= friendsRight)
-   {
-        friendsStrongestArm = friendsLeft;
-        freindsWeakestArm = friendsRight;
-   }
-   else 
-   {
-       freindsWeakestArm = friendsLeft;
-       friendsStrongestArm = friendsRight;
-   }
 
-   if(friendsStrongestArm == yourStrongestArm && freindsWeakestArm == yourWeakestsArm)
-   {
-       return true;
-   }
-   else
-   {
-       return false;
-   }
-
-1
 }
 
 console.log(areEquallyStrong(10, 15, 15, 10))
