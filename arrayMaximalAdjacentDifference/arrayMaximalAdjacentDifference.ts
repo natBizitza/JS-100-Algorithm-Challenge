@@ -8,7 +8,7 @@ function arrayMaximalAdjacentDifference(inputArray: number[]): number {
     }
   }
   
-  return Math.max.apply(null, result)
+  return Math.max(...result)
 }
 
 console.log(arrayMaximalAdjacentDifference([2, -7, 1, 0]));
