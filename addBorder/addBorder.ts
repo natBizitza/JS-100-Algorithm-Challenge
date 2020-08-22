@@ -1,17 +1,15 @@
 function addBorder(picture: string[]): string[] {
+    let length = picture[0].length+2;
+    let topBtm = ('*').repeat(length)
 
-    picture[0] = "*abc*";
-    picture[1] = "*ded*";
+    for(let i =0; i< picture.length; i++){
+        console.log(picture[i])
+        picture[i] = `*${picture[i]}*`
+    }
 
-
-   /*  picture.forEach(element => {    
-       // element = "*" + element + "*";    
-              
-    }); */
-
-    picture.unshift("*****");
-    picture.push("*****"); 
-    return picture.join('\,\n');
+    picture.unshift(topBtm);
+    picture.push(topBtm);
+    return picture;
 }
 
 console.log(addBorder(["abc", "ded"]));  
